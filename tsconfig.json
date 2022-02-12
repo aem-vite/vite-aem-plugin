@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": ["ES2018"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noUnusedLocals": true,
+    "outDir": "./lib",
+    "strict": true,
+    "sourceMap": true,
+    "target": "ES2018"
+  },
+
+  "include": ["./src"]
+}
