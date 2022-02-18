@@ -7,11 +7,10 @@
     "lib": ["ES2018"],
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "noUnusedLocals": true,
-    "outDir": "./lib",
     "strict": true,
     "sourceMap": true,
-    "target": "ES2018"
+    "target": "ES2018",
+    "useUnknownInCatchVariables": false
   },
 
   "include": ["./src"]

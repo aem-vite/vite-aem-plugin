@@ -42,10 +42,8 @@
     "tag": "latest"
   },
   "scripts": {
-    "clean": "rimraf lib/*",
-    "dev": "yarn bundle --watch",
-    "build": "yarn clean && yarn bundle",
-    "bundle": "tsup src/index.ts --sourcemap --dts --format cjs,esm --outDir lib",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "lint": "eslint --ext .ts src/**",
     "prepare": "husky install",
     "semantic-release": "semantic-release"
@@ -63,30 +61,30 @@
     }
   },
   "dependencies": {
+    "@aem-vite/import-rewriter": "^5.0.0",
+    "@vitejs/plugin-react": "^1.2.0",
     "debug": "^4.3.3",
-    "es-module-lexer": "^0.9.3",
-    "magic-string": "^0.25.7",
-    "rollup-pluginutils": "^2.8.2",
-    "vite": "^2.8.0"
+    "vite": "^2.8.2",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.1",
     "@types/debug": "^4.1.7",
-    "@types/node": "^12.20.39",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
-    "eslint": "^8.5.0",
+    "@types/node": "^12.20.46",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "semantic-release": "^17.4.7",
-    "tsup": "^5.11.9",
-    "typescript": "^4.5.4"
+    "tsup": "^5.11.13",
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "vite": ">2.6.0"

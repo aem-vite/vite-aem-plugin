@@ -2,9 +2,7 @@
   "root": true,
   
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "eslint:recommended"
   ],
 
   "plugins": ["prettier"],
@@ -14,5 +12,22 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["tsup.config.js"],
+      "extends": [
+        "plugin:node/recommended",
+        "plugin:prettier/recommended"
+      ]
+    },
+    {
+      "files": ["**/*.ts"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ]
+    }
+  ]
 }
