@@ -3,8 +3,9 @@ name: Release
 on:
   push:
     branches:
-      # TODO: Change this back to main
-      - non_existent
+      # TODO: Add main back in later
+      - alpha
+      - beta
 
 jobs:
   release:
