@@ -2,10 +2,10 @@ import { bundlesImportRewriter } from '@aem-vite/import-rewriter'
 
 import { configureAemProxy, setResolvedConfig } from './helpers'
 
-import type { Plugin, ProxyOptions, UserConfig } from 'vite'
+import type { PluginOption, ProxyOptions } from 'vite'
 import type { PluginOptions } from './types'
 
-export function viteForAem(options: PluginOptions): Plugin {
+export function viteForAem(options: PluginOptions): PluginOption {
   const aemOptions = options.aem
   const aemUrl = `http://${aemOptions?.host ?? 'localhost'}:${aemOptions?.port ?? 4602}`
 
@@ -17,7 +17,7 @@ export function viteForAem(options: PluginOptions): Plugin {
     enforce: 'pre',
     name: 'aem-vite:vite-aem-plugin',
 
-    config() {
+    config(config) {
       const baseProxyOptions: ProxyOptions = {
         autoRewrite: true,
         changeOrigin: true,
@@ -34,50 +34,49 @@ export function viteForAem(options: PluginOptions): Plugin {
         },
       }
 
-      const newConfig: UserConfig = {
-        server: {
-          open: true,
-          strictPort: true,
+      config.server = {
+        open: true,
+        strictPort: true,
 
-          proxy: {
-            [`^/content/(${options.contentPaths.join('|')})/.*`]: {
-              ...baseProxyOptions,
-              protocolRewrite: 'http',
-              selfHandleResponse: true,
+        proxy: {
+          [`^/content/(${options.contentPaths.join('|')})/.*`]: {
+            ...baseProxyOptions,
+            protocolRewrite: 'http',
+            selfHandleResponse: true,
 
-              // Use a proxy response handler to dynamically change the response content for specific pages
-              configure: configureAemProxy(aemUrl, options),
-            },
+            // Use a proxy response handler to dynamically change the response content for specific pages
+            configure: configureAemProxy(aemUrl, options),
+          },
 
-            // Handle all other AEM based requests
-            '^/(aem|apps|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var)/.*': {
-              ...baseProxyOptions,
-            },
+          // Handle all other AEM based requests
+          '^/(aem|apps|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var)/.*': {
+            ...baseProxyOptions,
+          },
 
-            // Handle the initial interaction between the Vite DevServer and AEM
-            '^/(index.html)?$': {
-              ...baseProxyOptions,
-              followRedirects: true,
-            },
+          // Handle the initial interaction between the Vite DevServer and AEM
+          '^/(index.html)?$': {
+            ...baseProxyOptions,
+            followRedirects: true,
           },
         },
       }
 
       // Enable the import rewriter when options are passed through
-      if (options.rewriterOptions && newConfig.plugins) {
+      if (options.rewriterOptions) {
         const { caching, minify, resourcesPath } = options.rewriterOptions
 
-        newConfig.plugins.push(
+        config.plugins = [
           bundlesImportRewriter({
             caching,
             publicPath: options.publicPath,
             minify,
             resourcesPath,
           }),
-        )
+          ...(config.plugins || []),
+        ]
       }
 
-      return newConfig
+      return config
     },
 
     configResolved(config) {
