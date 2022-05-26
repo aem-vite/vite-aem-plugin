@@ -1,5 +1,3 @@
-import { bundlesImportRewriter } from '@aem-vite/import-rewriter'
-
 import { configureAemProxy, setResolvedConfig } from './helpers'
 
 import type { PluginOption, ProxyOptions } from 'vite'
@@ -49,9 +47,10 @@ export function viteForAem(options: PluginOptions): PluginOption {
           },
 
           // Handle all other AEM based requests
-          '^/(aem|apps|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var)/.*': {
-            ...baseProxyOptions,
-          },
+          '^/(aem|apps|bin|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var|(assets|editor|sites|screens)\\.html)/.*':
+            {
+              ...baseProxyOptions,
+            },
 
           // Handle the initial interaction between the Vite DevServer and AEM
           '^/(index.html)?$': {
@@ -59,21 +58,6 @@ export function viteForAem(options: PluginOptions): PluginOption {
             followRedirects: true,
           },
         },
-      }
-
-      // Enable the import rewriter when options are passed through
-      if (options.rewriterOptions) {
-        const { caching, minify, resourcesPath } = options.rewriterOptions
-
-        config.plugins = [
-          bundlesImportRewriter({
-            caching,
-            publicPath: options.publicPath,
-            minify,
-            resourcesPath,
-          }),
-          ...(config.plugins || []),
-        ]
       }
 
       return config
