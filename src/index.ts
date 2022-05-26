@@ -47,9 +47,10 @@ export function viteForAem(options: PluginOptions): PluginOption {
           },
 
           // Handle all other AEM based requests
-          '^/(aem|apps|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var)/.*': {
-            ...baseProxyOptions,
-          },
+          '^/(aem|apps|bin|conf|content|crx|etc|etc.clientlibs|home|libs|mnt|system|var|(assets|editor|sites|screens)\\.html)/.*':
+            {
+              ...baseProxyOptions,
+            },
 
           // Handle the initial interaction between the Vite DevServer and AEM
           '^/(index.html)?$': {
