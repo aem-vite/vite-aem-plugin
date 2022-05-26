@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-05-26)
+
+
+### Bug Fixes
+
+* resolve incorrect plugin instance type ([77ea949](https://github.com/aem-vite/vite-aem-plugin/commit/77ea949ec48e83d462c5b5417919a1fb2d2d3f69))
+
 # 1.0.0-alpha.1 (2022-02-18)
 
 
