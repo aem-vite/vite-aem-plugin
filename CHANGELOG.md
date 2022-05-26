@@ -1,3 +1,11 @@
+# [1.0.0-alpha.3](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2022-05-26)
+
+
+### Bug Fixes
+
+* add missing proxy paths ([9768155](https://github.com/aem-vite/vite-aem-plugin/commit/97681556d1dd68bdfecb3b3f088300e383a33bf2))
+* remove import rewriter ([de59a2c](https://github.com/aem-vite/vite-aem-plugin/commit/de59a2ca352874db4df7aa16f978700951c10681))
+
 # [1.0.0-alpha.2](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-05-26)
 
 
