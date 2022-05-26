@@ -1,5 +1,3 @@
-import { bundlesImportRewriter } from '@aem-vite/import-rewriter'
-
 import { configureAemProxy, setResolvedConfig } from './helpers'
 
 import type { PluginOption, ProxyOptions } from 'vite'
@@ -59,21 +57,6 @@ export function viteForAem(options: PluginOptions): PluginOption {
             followRedirects: true,
           },
         },
-      }
-
-      // Enable the import rewriter when options are passed through
-      if (options.rewriterOptions) {
-        const { caching, minify, resourcesPath } = options.rewriterOptions
-
-        config.plugins = [
-          bundlesImportRewriter({
-            caching,
-            publicPath: options.publicPath,
-            minify,
-            resourcesPath,
-          }),
-          ...(config.plugins || []),
-        ]
       }
 
       return config
