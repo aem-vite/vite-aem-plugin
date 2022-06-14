@@ -1,3 +1,5 @@
+import type { bundlesImportRewriter } from '@aem-vite/import-rewriter'
+
 interface AemServerOptions {
   /**
    * Server host or ip address.
@@ -29,4 +31,9 @@ export interface PluginOptions {
    * /etc.clienlibs/<project>/clientlibs/<clientlib>
    */
   publicPath: string
+
+  /**
+   * AEM Vite import rewriter options.
+   */
+  rewriterOptions?: Omit<Parameters<typeof bundlesImportRewriter>[0], 'publicPath'>
 }
