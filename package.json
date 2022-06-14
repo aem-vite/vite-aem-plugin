@@ -13,7 +13,7 @@
   },
   "version": "1.0.0-alpha.3",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "keywords": [
     "aem",
@@ -61,39 +61,35 @@
     }
   },
   "dependencies": {
+    "@aem-vite/import-rewriter": "^5.0.1",
     "@vitejs/plugin-react": "^1.3.2",
     "debug": "^4.3.4",
-    "vite": "2.8.2",
+    "vite": "2.9.12",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.1",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@types/debug": "^4.1.7",
-    "@types/node": "^12.20.46",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
-    "eslint": "^8.16.0",
+    "@types/node": "^16.11.39",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
-    "prettier": "^2.6.2",
-    "semantic-release": "^17.4.7",
-    "tsup": "^5.12.9",
-    "typescript": "^4.7.2"
+    "husky": "^8.0.1",
+    "prettier": "^2.7.0",
+    "semantic-release": "^19.0.3",
+    "tsup": "^6.1.2",
+    "typescript": "^4.7.3"
   },
   "peerDependencies": {
     "vite": ">2.6.0"
   },
   "optionalDependencies": {
     "fsevents": "~2.3.2"
-  },
-  "overrides": {
-    "@aem-vite/import-rewriter": {
-      "vite": "2.8.2"
-    }
   }
 }
