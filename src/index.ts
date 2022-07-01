@@ -7,7 +7,7 @@ import type { PluginOptions } from './types'
 
 export function viteForAem(options: PluginOptions): PluginOption[] {
   const aemOptions = options.aem
-  const aemUrl = `http://${aemOptions?.host ?? 'localhost'}:${aemOptions?.port ?? 4602}`
+  const aemUrl = `http://${aemOptions?.host ?? 'localhost'}:${aemOptions?.port ?? 4502}`
 
   if (!options.publicPath || !options.publicPath.length) {
     throw new Error('A public path is required for the proxy server to find and inject Vite DevServer!')
