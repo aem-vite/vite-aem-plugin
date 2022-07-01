@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-07-01)
+
+
+### Bug Fixes
+
+* correct default port for aem ([de09594](https://github.com/aem-vite/vite-aem-plugin/commit/de0959426c8813fcf5cc8a76e56714b08d65a590))
+
 # [1.0.0-alpha.4](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-06-14)
 
 
