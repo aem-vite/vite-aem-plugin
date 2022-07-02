@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/aem-vite/vite-aem-plugin/issues"
   },
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0",
   "engines": {
     "node": ">= 14"
   },
