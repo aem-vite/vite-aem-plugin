@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.0...v1.0.1) (2022-07-20)
+
+
+### Bug Fixes
+
+* configured server options were missing ([04e5e31](https://github.com/aem-vite/vite-aem-plugin/commit/04e5e312bec2be1db90bdb5bcceb4ec578e1da06))
+
 # 1.0.0 (2022-07-02)
 
 
