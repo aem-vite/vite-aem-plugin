@@ -36,6 +36,8 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
         }
 
         config.server = {
+          ...(config.server || {}),
+
           open: true,
           strictPort: true,
 
