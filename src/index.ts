@@ -35,6 +35,13 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
           },
         }
 
+        config.build = {
+          ...(config.build || {}),
+
+          // Always prefer maximum browser compatibility
+          target: 'es2015',
+        }
+
         config.server = {
           ...(config.server || {}),
 
