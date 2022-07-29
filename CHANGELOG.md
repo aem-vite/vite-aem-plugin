@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v1.1.0...v2.0.0) (2022-07-29)
+
+
+### Build System
+
+* update npm dependencies ([d71e3c0](https://github.com/aem-vite/vite-aem-plugin/commit/d71e3c053ccb8a7bad0824d25de6ca46ee5d2f25))
+
+
+### Features
+
+* default builds to ES2015 for compatibility ([3f6c4a4](https://github.com/aem-vite/vite-aem-plugin/commit/3f6c4a4c307acd4ad3572f32591eced527954dc5))
+
+
+### BREAKING CHANGES
+
+* This plugin now requires Vite v3+. Please use v1 of this plugin for Vite 2 compatibility
+
 # [2.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v1.0.1...v2.0.0) (2022-07-29)
 
 
