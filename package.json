@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/aem-vite/vite-aem-plugin/issues"
   },
-  "version": "2.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": ">= 14"
   },
@@ -62,9 +62,9 @@
   },
   "dependencies": {
     "@aem-vite/import-rewriter": "^6.0.1",
-    "@vitejs/plugin-react": "^2.0.0",
+    "@vitejs/plugin-react": "^1.3.2",
     "debug": "^4.3.4",
-    "vite": "3.0.2",
+    "vite": "^2.9.14",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
@@ -73,9 +73,9 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@types/debug": "^4.1.7",
-    "@types/node": "^16.11.45",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
+    "@types/node": "^16.11.46",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
@@ -83,7 +83,7 @@
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.3",
-    "tsup": "^6.1.3",
+    "tsup": "^6.2.0",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
