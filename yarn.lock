@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@aem-vite/import-rewriter@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@aem-vite/import-rewriter/-/import-rewriter-6.0.0.tgz#75008bbb8829da2daaeddffd689b7287a937dd86"
-  integrity sha512-wcoRZv7ZddVwUf/vmlIvDK4dEwPshTdMgnrXxHPlvmjasHVj0zqW5DZKydOoH91EmrWACqsiE3lJ7NRKpfQ2zQ==
+"@aem-vite/import-rewriter@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@aem-vite/import-rewriter/-/import-rewriter-6.0.1.tgz#fd2519b84c11e2777aaa8175b50d209eff196b37"
+  integrity sha512-VmtG/LsR0orKcnS8ScxeV/FEPvGiG5txWzCPrH6QYI1TXEzfCiLX0h8R+bZSKG72qnWGOKvCOxAylOG3cpEH9A==
   dependencies:
     debug "^4.3.4"
     es-module-lexer "^0.10.5"
