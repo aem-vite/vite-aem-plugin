@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.0.0...v2.1.0) (2022-07-29)
+
+
+### Features
+
+* default builds to ES2015 for compatibility ([996f11b](https://github.com/aem-vite/vite-aem-plugin/commit/996f11b6c6ea9f7aca862077541683f8302fc8e6))
+
 # [2.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v1.1.0...v2.0.0) (2022-07-29)
 
 
