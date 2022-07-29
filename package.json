@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/aem-vite/vite-aem-plugin/issues"
   },
-  "version": "2.0.0",
+  "version": "1.1.0",
   "engines": {
     "node": ">= 14"
   },
@@ -88,7 +88,7 @@
   },
   "peerDependencies": {
     "@vitejs/plugin-react": ">=2.0.0",
-    "vite": ">=3.0.0"
+    "vite": ">=2.6.0"
   },
   "optionalDependencies": {
     "fsevents": "~2.3.2"
