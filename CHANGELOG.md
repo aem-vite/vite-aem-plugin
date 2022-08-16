@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/aem-vite/vite-aem-plugin/compare/v2.2.0...v2.2.1) (2022-08-16)
+
+
+### Bug Fixes
+
+* allow root of content path(s) to be proxied ([d467370](https://github.com/aem-vite/vite-aem-plugin/commit/d467370da4b623ae92b2c9a8e12e143a8e7fe24c))
+
 # [2.2.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.1.0...v2.2.0) (2022-08-16)
 
 
