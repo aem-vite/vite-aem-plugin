@@ -49,7 +49,7 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
           strictPort: true,
 
           proxy: {
-            [`^/content/(${options.contentPaths.join('|')})/.*`]: {
+            [`^/content/(${options.contentPaths.join('|')})(/.*)?`]: {
               ...baseProxyOptions,
               protocolRewrite: 'http',
               selfHandleResponse: true,
