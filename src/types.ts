@@ -20,6 +20,14 @@ export interface PluginOptions {
   aem?: AemServerOptions
 
   /**
+   * The expression to use when matching ClientLibs on a page.
+   *
+   * @example
+   * /etc.clienlibs/<project>/clientlibs/(<clientlib_one>|<clientlib_two>)
+   */
+  clientlibsExpression?: string
+
+  /**
    * A list of AEM paths to watch and replace ClientLib paths within.
    */
   contentPaths: string[]

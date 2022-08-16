@@ -79,7 +79,9 @@ export function setResolvedConfig(config: ResolvedConfig) {
  */
 export function configureAemProxy(aemUrl: string, options: PluginOptions) {
   const clientlibsExpression = new RegExp(
-    `<(?:script|link).*(?:src|href)="${options.publicPath}.(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*></script>|>)`,
+    `<(?:script|link).*(?:src|href)="${
+      options.clientlibsExpression ?? options.publicPath
+    }.(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*></script>|>)`,
     'g',
   )
 
