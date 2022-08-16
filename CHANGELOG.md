@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.1.0...v2.2.0) (2022-08-16)
+
+
+### Features
+
+* allow custom ClientLibs expressions ([4137cd9](https://github.com/aem-vite/vite-aem-plugin/commit/4137cd9ed2ef1960acc52397d9fc321bc576b78c))
+
 # [2.1.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.0.0...v2.1.0) (2022-07-29)
 
 
