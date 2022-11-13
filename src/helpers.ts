@@ -125,7 +125,8 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
             debug('stripping matched clientlibs:', matches)
 
             matches.forEach((match, index) => {
-              replacedHtml = replacedHtml.replace(match, index === 0 ? getViteScripts() : '')
+              // Replace the last matched ClientLib with the Vite DevServer script tags
+              replacedHtml = replacedHtml.replace(match, index === matches.length - 1 ? getViteScripts() : '')
             })
           }
 
