@@ -8,9 +8,14 @@ import type { PluginOptions } from './types'
 
 const prefix = '[vite-aem-plugin]'
 
+let bundleEntries: string[]
 let resolvedConfig: ResolvedConfig
 
 export const debug = _debug('vite-aem-plugin')
+
+export function isObject(value: unknown): value is Record<string, unknown> {
+  return Object.prototype.toString.call(value) === '[object Object]'
+}
 
 /**
  * Retrieves the Vite DevServer `link`/`script` tags.
@@ -20,7 +25,7 @@ export const debug = _debug('vite-aem-plugin')
 function getViteScripts() {
   const entries: string[] = []
 
-  for (const source of Object.values(resolvedConfig.build?.rollupOptions?.input ?? {})) {
+  for (const source of bundleEntries) {
     if (/\.(js|ts)x?/.test(source)) {
       entries.push(`<script type="module" src="/${source}"></script>`)
     } else if (/\.(css|less|sass|scss|postcss)/.test(source)) {
@@ -55,6 +60,12 @@ ${entries.join('\n')}
  */
 function replaceUrl(input: string | undefined, aemUrl: string) {
   return (input || '').replace(aemUrl, `http://${resolvedConfig.server.host}:${resolvedConfig.server.port}`)
+}
+
+export function setBundleEntries(entries: string[]) {
+  if (!bundleEntries) {
+    bundleEntries = entries
+  }
 }
 
 /**
