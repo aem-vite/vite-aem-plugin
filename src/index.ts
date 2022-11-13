@@ -1,6 +1,6 @@
 import { bundlesImportRewriter } from '@aem-vite/import-rewriter'
 
-import { configureAemProxy, setResolvedConfig } from './helpers'
+import { configureAemProxy, isObject, setBundleEntries, setResolvedConfig } from './helpers'
 
 import type { PluginOption, ProxyOptions } from 'vite'
 import type { PluginOptions } from './types'
@@ -77,6 +77,28 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
 
       configResolved(config) {
         setResolvedConfig(config)
+
+        const buildInput = config.build.rollupOptions?.input
+
+        let bundleEntries: string[] = []
+
+        if (buildInput) {
+          if (typeof buildInput === 'string') {
+            bundleEntries = [buildInput]
+          } else if (Array.isArray(buildInput)) {
+            bundleEntries = [...new Set(buildInput)]
+          } else if (isObject(buildInput)) {
+            bundleEntries = Object.values(buildInput)
+          } else {
+            throw new Error(
+              'Invalid value detected for rollupOptions.input. Please ensure it is a string, array or alias object.',
+            )
+          }
+        } else {
+          throw new Error('No input option(s) was provided via rollupOptions.input.')
+        }
+
+        setBundleEntries(bundleEntries)
       },
     },
   ]
