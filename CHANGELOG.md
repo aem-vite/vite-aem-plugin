@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.0...v2.3.1) (2022-11-14)
+
+
+### Bug Fixes
+
+* add missing proxy path for /login ([9aa57ba](https://github.com/aem-vite/vite-aem-plugin/commit/9aa57bac8cd927614e3f7597f8b994efd3bf83f2))
+
 # [2.3.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.2.1...v2.3.0) (2022-11-13)
 
 
