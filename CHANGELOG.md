@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.2.1...v2.3.0) (2022-11-13)
+
+
+### Bug Fixes
+
+* correct position of devserver scripts in proxy ([41f5782](https://github.com/aem-vite/vite-aem-plugin/commit/41f57826e82008425c07de2961d888555deb4e3c))
+
+
+### Features
+
+* improved rollup input handler ([c9abe72](https://github.com/aem-vite/vite-aem-plugin/commit/c9abe722d981763a8c5e1399d3de94308b90ebf5))
+
 ## [2.2.1](https://github.com/aem-vite/vite-aem-plugin/compare/v2.2.0...v2.2.1) (2022-08-16)
 
 
