@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.1...v2.3.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* mark `@vitejs/plugin-react` as an optional peer dep ([6db341d](https://github.com/aem-vite/vite-aem-plugin/commit/6db341d06a9d697c50864a03f9377ddd4103ecff))
+
 ## [2.3.1](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.0...v2.3.1) (2022-11-14)
 
 
