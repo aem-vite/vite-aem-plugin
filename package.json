@@ -87,8 +87,8 @@
     "typescript": "^4.9.3"
   },
   "peerDependencies": {
-    "@vitejs/plugin-react": "^1.0.0 || ^2.0.0",
-    "vite": "^2.6.0 || ^3.0.0"
+    "@vitejs/plugin-react": "^1.0.0 || ^2.0.0 || ^3.0.0",
+    "vite": "^2.6.0 || ^3.0.0 || ^4.0.0"
   },
   "peerDependenciesMeta": {
     "@vitejs/plugin-react": {
