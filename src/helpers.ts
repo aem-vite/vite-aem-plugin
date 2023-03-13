@@ -1,5 +1,5 @@
 import _debug from 'debug'
-import zlib from 'zlib'
+import zlib from 'node:zlib'
 
 import viteReact from '@vitejs/plugin-react'
 

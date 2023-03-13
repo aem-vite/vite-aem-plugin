@@ -64,8 +64,7 @@
     "@aem-vite/import-rewriter": "^7.0.0",
     "@vitejs/plugin-react": "^1.3.2",
     "debug": "^4.3.4",
-    "vite": "^2.9.15",
-    "zlib": "^1.0.5"
+    "vite": "^2.9.15"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
