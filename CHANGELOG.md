@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.2...v2.3.3) (2023-03-13)
+
+
+### Bug Fixes
+
+* **dep:** remove zlib dependency for node.js lib ([35e7784](https://github.com/aem-vite/vite-aem-plugin/commit/35e7784cdf120ddc14b4582fa1b8d6221349f7de))
+
 ## [2.3.2](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.1...v2.3.2) (2022-11-30)
 
 
