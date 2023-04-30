@@ -1,3 +1,27 @@
+# [3.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.3...v3.0.0) (2023-04-30)
+
+
+### Bug Fixes
+
+* allow server open behaviour to be disabled ([e5b278a](https://github.com/aem-vite/vite-aem-plugin/commit/e5b278a98a38c58ce36e8c28fd9ba372222fe82e))
+
+
+### Build System
+
+* update npm deps and node engine ([2e67c8c](https://github.com/aem-vite/vite-aem-plugin/commit/2e67c8c385330d5e68215a965af31866e921cc8d))
+
+
+### Features
+
+* ability to define custom AEM path segments ([e378c58](https://github.com/aem-vite/vite-aem-plugin/commit/e378c58501864e209d0ccb709fbd375df048a1c2))
+
+
+### BREAKING CHANGES
+
+* minimum version of node/vite
+
+Node.js v14.18.0 and Vite 3.0.0 or greater are now required.
+
 ## [2.3.3](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.2...v2.3.3) (2023-03-13)
 
 
