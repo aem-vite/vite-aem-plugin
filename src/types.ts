@@ -20,6 +20,11 @@ export interface PluginOptions {
   aem?: AemServerOptions
 
   /**
+   * Define a list of AEM paths that need to be proxied.
+   */
+  aemProxySegments?: string[]
+
+  /**
    * The expression to use when matching ClientLibs on a page.
    *
    * @example

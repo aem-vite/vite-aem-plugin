@@ -1,17 +1,50 @@
 import { bundlesImportRewriter } from '@aem-vite/import-rewriter'
 
-import { configureAemProxy, isObject, setBundleEntries, setResolvedConfig } from './helpers'
+import { configureAemProxy, debug, isObject, setBundleEntries, setResolvedConfig } from './helpers'
 
 import type { PluginOption, ProxyOptions } from 'vite'
 import type { PluginOptions } from './types'
 
 export function viteForAem(options: PluginOptions): PluginOption[] {
+  if (!options) {
+    throw new Error('No options were provided.')
+  }
+
   const aemOptions = options.aem
   const aemUrl = `http://${aemOptions?.host ?? 'localhost'}:${aemOptions?.port ?? 4502}`
 
   if (!options.publicPath || !options.publicPath.length) {
     throw new Error('A public path is required for the proxy server to find and inject Vite DevServer!')
   }
+
+  debug('using AEM URL: %s', aemUrl)
+  debug('options:', aemOptions)
+
+  const aemProxySegments = [
+    ...(options.aemProxySegments ?? []),
+    'aem',
+    'apps',
+    'bin',
+    'conf',
+    'content',
+    'crx',
+    'etc',
+    'etc.clientlibs',
+    'home',
+    'libs',
+    'login',
+    'mnt',
+    'system',
+    'var',
+    '(assets|editor|sites|screens)',
+  ]
+
+  const aemProxySegmentsExp = new RegExp(`^/(${aemProxySegments.join('|')}(.html)?)/.*`).source
+
+  const aemContentPathsExp = `^/content/(${options.contentPaths.join('|')})(/.*)?`
+
+  debug('aem content paths:', aemContentPathsExp)
+  debug('aem request segments:', aemProxySegmentsExp)
 
   const plugins: PluginOption[] = [
     {
@@ -36,6 +69,7 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
         }
 
         debug('proxy options:', baseProxyOptions)
+
         config.build = {
           ...(config.build || {}),
 
@@ -50,7 +84,7 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
           strictPort: true,
 
           proxy: {
-            [`^/content/(${options.contentPaths.join('|')})(/.*)?`]: {
+            [aemContentPathsExp]: {
               ...baseProxyOptions,
               protocolRewrite: 'http',
               selfHandleResponse: true,
@@ -60,10 +94,9 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
             },
 
             // Handle all other AEM based requests
-            '^/(aem|apps|bin|conf|content|crx|etc|etc.clientlibs|home|libs|login|mnt|system|var|(assets|editor|sites|screens)\\.html)/.*':
-              {
-                ...baseProxyOptions,
-              },
+            [aemProxySegmentsExp]: {
+              ...baseProxyOptions,
+            },
 
             // Handle the initial interaction between the Vite DevServer and AEM
             '^/(index.html)?$': {
