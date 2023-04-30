@@ -96,6 +96,9 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
     'g',
   )
 
+  debug('clientlibs (custom) expression', options.clientlibsExpression)
+  debug('clientlibs expression', clientlibsExpression)
+
   return (proxy: HttpProxy.Server) => {
     proxy.on('proxyRes', (proxyRes, req, res) => {
       const requestUrl = req.url as string
@@ -105,6 +108,8 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
         proxyHeaders &&
         proxyHeaders['content-type'] &&
         proxyHeaders['content-type'].match(/(text\/html|application\/xhtml+xml)/)
+
+      debug('is html request?', requestUrl, isHtmlRequest)
 
       const isGzipedRequest =
         proxyHeaders && proxyHeaders['content-encoding'] && proxyHeaders['content-encoding'].includes('gzip')
@@ -128,7 +133,7 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
 
           const matches = html.match(clientlibsExpression)
 
-          debug('total clientlib matches:', matches?.length ?? 0)
+          debug('total clientlib matches:', matches)
 
           let replacedHtml = html
 

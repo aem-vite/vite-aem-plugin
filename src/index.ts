@@ -35,6 +35,7 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
           },
         }
 
+        debug('proxy options:', baseProxyOptions)
         config.build = {
           ...(config.build || {}),
 
