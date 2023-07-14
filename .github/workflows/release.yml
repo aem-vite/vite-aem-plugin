@@ -11,24 +11,30 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
+        name: Install Node.js
         with:
-          node-version: "14"
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8.6.7
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Lint our source code
-        run: yarn lint
+        run: pnpm lint
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HUSKY: "0"
+          HUSKY: '0'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: pnpm semantic-release
