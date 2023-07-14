@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v3.0.0...v4.0.0) (2023-07-14)
+
+
+### Build System
+
+* increase minimum node and vite versions ([2c6cdc4](https://github.com/aem-vite/vite-aem-plugin/commit/2c6cdc4b5fe2ca03a680f49a2e805c3c424c3f48))
+
+
+### BREAKING CHANGES
+
+* bump min node and vite versions
+
+Node v16 and Vite v3.0.0 are required moving forward. `@vitejs/plugin-react` v3+ is also now required too.
+
 # [3.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v2.3.3...v3.0.0) (2023-04-30)
 
 

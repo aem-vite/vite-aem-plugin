@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/aem-vite/vite-aem-plugin/issues"
   },
-  "version": "3.0.0",
+  "version": "4.0.0",
   "engines": {
     "node": ">= 16",
     "pnpm": ">= 8.5"
