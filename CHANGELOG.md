@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.0...v4.0.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **build:** ensure correct build target ([89fdd0f](https://github.com/aem-vite/vite-aem-plugin/commit/89fdd0f2d7c28ecde1bd6d54d509e9c035fec134))
+
 # [4.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v3.0.0...v4.0.0) (2023-07-14)
 
 
