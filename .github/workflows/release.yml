@@ -22,7 +22,7 @@ jobs:
         name: Install Node.js
         with:
           node-version: 16
-          cache: pnpm
+          cache: 'pnpm'
 
       - uses: pnpm/action-setup@v2
         name: Install pnpm
