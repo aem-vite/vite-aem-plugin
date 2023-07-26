@@ -8,5 +8,5 @@ module.exports = defineConfig({
   outDir: 'lib',
   sourcemap: true,
   splitting: false,
-  target: ['node14'],
+  target: ['node16'],
 })
