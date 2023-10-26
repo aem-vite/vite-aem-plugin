@@ -101,7 +101,6 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
             // Handle the initial interaction between the Vite DevServer and AEM
             '^/(index.html)?$': {
               ...baseProxyOptions,
-              followRedirects: true,
             },
           },
         }
