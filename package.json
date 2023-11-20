@@ -70,7 +70,7 @@
     }
   },
   "dependencies": {
-    "@aem-vite/import-rewriter": "^8.0.0",
+    "@aem-vite/import-rewriter": "^9.0.0",
     "@vitejs/plugin-react": "^4.2.0",
     "debug": "^4.3.4",
     "vite": "^5.0.0"
