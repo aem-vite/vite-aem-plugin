@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.2...v4.0.3) (2023-10-26)
+
+
+### Bug Fixes
+
+* resolve issue when AEM user is logged out ([28c47f0](https://github.com/aem-vite/vite-aem-plugin/commit/28c47f0d4354f11f86334551698ac33463e7660d))
+
 ## [4.0.2](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.1...v4.0.2) (2023-07-26)
 
 
