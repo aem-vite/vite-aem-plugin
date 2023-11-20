@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.0...v5.0.1) (2023-11-20)
+
+
+### Bug Fixes
+
+* correct import-rewriter package version ([ad51bd6](https://github.com/aem-vite/vite-aem-plugin/commit/ad51bd65012c34faeeecce013b380c00a22b156b))
+
 # [5.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.3...v5.0.0) (2023-11-20)
 
 
