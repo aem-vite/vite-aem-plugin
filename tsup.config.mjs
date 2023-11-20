@@ -1,12 +1,12 @@
-const { defineConfig } = require('tsup')
+import { defineConfig } from 'tsup'
 
-module.exports = defineConfig({
+export default defineConfig({
   clean: true,
   dts: true,
   entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
   outDir: 'lib',
-  sourcemap: true,
+  sourcemap: false,
   splitting: false,
-  target: ['node16'],
+  target: ['node18', 'node20'],
 })

@@ -4,12 +4,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "lib": ["ES2018"],
-    "module": "CommonJS",
+    "lib": ["ES2022"],
+    "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,
-    "target": "ES2018",
+    "target": "ES2022",
     "useUnknownInCatchVariables": false
   },
 
