@@ -1,3 +1,21 @@
+# [5.0.0](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.3...v5.0.0) (2023-11-20)
+
+
+### Build System
+
+* drop native CJS support ([be827b5](https://github.com/aem-vite/vite-aem-plugin/commit/be827b5418b528a2ea415555474d9c84d9618b74))
+* increase minimum node and vite versions ([2e41bce](https://github.com/aem-vite/vite-aem-plugin/commit/2e41bce06e63e99173429ca7b33b5d14c350c89f))
+
+
+### BREAKING CHANGES
+
+* no longer support CJS
+
+Vite 5 deprecates CJS support and as such support has been dropped here.
+* bump min node and vite versions
+
+Node v18/20 and Vite v5+ are required moving forward.
+
 ## [4.0.3](https://github.com/aem-vite/vite-aem-plugin/compare/v4.0.2...v4.0.3) (2023-10-26)
 
 
