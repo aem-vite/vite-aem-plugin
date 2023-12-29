@@ -1,5 +1,10 @@
 ## [5.0.2](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.1...v5.0.2) (2023-12-29)
 
+
+### Build System
+
+* bump vite from 5.0.0 to 5.0.5 ([aa89862](https://github.com/aem-vite/vite-aem-plugin/commit/aa89862cbf11e8d298e3a517199d19d213753854))
+
 ## [5.0.1](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.0...v5.0.1) (2023-11-20)
 
 
