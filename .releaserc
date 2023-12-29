@@ -30,6 +30,11 @@
             "release": "minor"
           },
           {
+            "type": "refactor",
+            "scope": "core",
+            "release": "minor"
+          },
+          {
             "type": "fix",
             "release": "patch"
           },
@@ -43,9 +48,9 @@
             "release": "patch"
           },
           {
-            "type": "refactor",
-            "scope": "core",
-            "release": "minor"
+            "type": "build",
+            "scope": "deps",
+            "release": "patch"
           },
           {
             "revert": true,
