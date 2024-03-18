@@ -16,15 +16,15 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         name: Install pnpm
         with:
           version: 8.9.2
 
-      - uses: actions/setup-node@v3
-        name: Install Node.js
+      - uses: actions/setup-node@v4
+        name: Install Node
         with:
           node-version: 20
           cache: 'pnpm'
@@ -32,10 +32,10 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint our source code
+      - name: Lint
         run: pnpm lint
 
       - name: Build
