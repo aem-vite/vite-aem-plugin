@@ -1,3 +1,10 @@
+## [5.0.3](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.2...v5.0.3) (2024-03-18)
+
+
+### Bug Fixes
+
+* ensure correct content type is used [#8](https://github.com/aem-vite/vite-aem-plugin/issues/8) ([819add5](https://github.com/aem-vite/vite-aem-plugin/commit/819add57adee340de847f19837a1dd6f21210d79))
+
 ## [5.0.2](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.1...v5.0.2) (2023-12-29)
 
 
