@@ -153,7 +153,7 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
           if (isHtmlModified) {
             try {
               res.setHeader('content-encoding', '')
-              res.setHeader('content-type', 'text/html')
+              res.setHeader('content-type', proxyHeaders['content-type'] ?? 'text/html;charset=utf-8')
               res.removeHeader('content-length')
               res.end(replacedHtml)
 
