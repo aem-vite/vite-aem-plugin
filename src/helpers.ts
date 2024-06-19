@@ -25,6 +25,17 @@ export function isObject(value: unknown): value is Record<string, unknown> {
 function getViteScripts() {
   const entries: string[] = []
 
+  entries.push('<script type="module" src="/@vite/client"></script>')
+
+  const isUsingReact = resolvedConfig.plugins.find(({ name }) => name === 'vite:react-refresh')
+  if (isUsingReact) {
+    entries.push(`
+<script type="module">
+  ${viteReact.preambleCode.replace('__BASE__', resolvedConfig.base)}
+</script>
+    `)
+  }
+
   for (const source of bundleEntries) {
     if (/\.(js|ts)x?/.test(source)) {
       entries.push(`<script type="module" src="/${source}"></script>`)
@@ -33,22 +44,7 @@ function getViteScripts() {
     }
   }
 
-  let scripts = `
-<script type="module" src="/@vite/client"></script>
-${entries.join('\n')}
-`
-
-  const isUsingReact = resolvedConfig.plugins.find(({ name }) => name === 'vite:react-refresh')
-
-  if (isUsingReact) {
-    scripts += `
-<script type="module">
-  ${viteReact.preambleCode.replace('__BASE__', resolvedConfig.base)}
-</script>
-    `
-  }
-
-  return scripts
+  return entries.join('\n')
 }
 
 /**
