@@ -1,3 +1,10 @@
+## [5.0.4](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.3...v5.0.4) (2024-06-21)
+
+
+### Bug Fixes
+
+* react fast refresh by reordering Vite React preamble script first ([a466c67](https://github.com/aem-vite/vite-aem-plugin/commit/a466c6765333154d842cac750c7bb3c1e17f708a))
+
 ## [5.0.3](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.2...v5.0.3) (2024-03-18)
 
 
