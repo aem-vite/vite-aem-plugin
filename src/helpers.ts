@@ -88,7 +88,7 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
   const clientlibsExpression = new RegExp(
     `<(?:script|link).*(?:src|href)="${
       options.clientlibsExpression ?? options.publicPath
-    }.(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*></script>|>)`,
+    }.(?:(lc-\\w{32}-lc(.min)?)|((min.)?ACSHASH\\w{32})|(\\w{32}(.min)?))?.?(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
     'g',
   )
 
