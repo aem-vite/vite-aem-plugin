@@ -1,3 +1,5 @@
+## [5.0.6](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.5...v5.0.6) (2025-08-30)
+
 ## [5.0.5](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.4...v5.0.5) (2024-06-22)
 
 
