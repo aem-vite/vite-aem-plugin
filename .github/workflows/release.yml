@@ -16,18 +16,16 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 9
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
 
-      - uses: actions/setup-node@v4
-        name: Install Node
+      - name: Install Node.js
+        uses: actions/setup-node@v4.4.0
         with:
-          node-version: 20
           cache: 'pnpm'
+          node-version-file: '.nvmrc'
 
       - name: Update npm
         run: npm install -g npm@latest
