@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@aem-vite/import-rewriter':
-        specifier: ^9.0.0
-        version: 9.0.0(vite@5.3.1(@types/node@20.14.7))
+        specifier: ^9.1.1
+        version: 9.1.1(vite@5.3.1(@types/node@20.14.7))
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.1(vite@5.3.1(@types/node@20.14.7))
@@ -23,10 +23,6 @@ importers:
       vite:
         specifier: ^5.3.1
         version: 5.3.1(@types/node@20.14.7)
-    optionalDependencies:
-      fsevents:
-        specifier: ~2.3.2
-        version: 2.3.3
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.3.0
@@ -79,6 +75,10 @@ importers:
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
+    optionalDependencies:
+      fsevents:
+        specifier: ~2.3.2
+        version: 2.3.3
 
 packages:
 
@@ -86,11 +86,11 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@aem-vite/import-rewriter@9.0.0':
-    resolution: {integrity: sha512-mGOihyRrwHc/ASr3VfLCg8jWNGCaQLhFiGvvrgIQLqm7Bw63ciHz+RWo+KHKMoKcFUeyYy3iHCADmsRrNIuIsA==}
-    engines: {node: ^18.0.0 || >=20.0.0, pnpm: '>= 8.5'}
+  '@aem-vite/import-rewriter@9.1.1':
+    resolution: {integrity: sha512-04KVr1dkI1691ZL4HMR6HwnFM7rR2g2IgWMS6WemoNdNb0ejuBrztzxzkiPakcl1BCqwOX6as1uwk8HdxY1MPg==}
+    engines: {node: ^20.19.0 || >=22.12.0 || >=24.0.0, pnpm: '>= 8.5'}
     peerDependencies:
-      vite: ^5.0.0
+      vite: ^5.0.0 || ^6.0.0 || ^7.0.0
 
   '@ampproject/remapping@2.2.1':
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -2654,12 +2654,12 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@aem-vite/import-rewriter@9.0.0(vite@5.3.1(@types/node@20.14.7))':
+  '@aem-vite/import-rewriter@9.1.1(vite@5.3.1(@types/node@20.14.7))':
     dependencies:
       debug: 4.3.5
       es-module-lexer: 1.4.1
       magic-string: 0.30.8
-      rollup: 4.5.0
+      rollup: 4.18.0
       vite: 5.3.1(@types/node@20.14.7)
     optionalDependencies:
       fsevents: 2.3.3
