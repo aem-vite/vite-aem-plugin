@@ -1,10 +1,3 @@
-## [5.0.5](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.4...v5.0.5) (2024-06-22)
-
-
-### Bug Fixes
-
-* add cache/minification support to expression ([c72946a](https://github.com/aem-vite/vite-aem-plugin/commit/c72946a136dc164aa28d9f0574c2bff37df950d5))
-
 ## [5.0.4](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.3...v5.0.4) (2024-06-21)
 
 
