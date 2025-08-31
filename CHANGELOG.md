@@ -7,6 +7,13 @@
 
 ## [5.0.6](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.5...v5.0.6) (2025-08-30)
 
+
+### Build System
+
+* bump @aem-vite/import-rewriter to 9.1.1 ([4620356](https://github.com/aem-vite/vite-aem-plugin/commit/4620356d1a37ef31ea5a5a920f08a6f27e853e4a))
+* update peer dependency versions ([de42705](https://github.com/aem-vite/vite-aem-plugin/commit/de427059abbe33cfe3fb30cdde42e64f6edabd92))
+* update vulnerable dependencies ([506b1ed](https://github.com/aem-vite/vite-aem-plugin/commit/506b1edafe53f19852023252a524a9513a0f2bc8))
+
 ## [5.0.5](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.4...v5.0.5) (2024-06-22)
 
 
