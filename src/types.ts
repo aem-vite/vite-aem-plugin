@@ -38,6 +38,18 @@ export interface PluginOptions {
   contentPaths: string[]
 
   /**
+   * A list of key format expressions to use when matching ClientLibs on a page.
+   *
+   * @example
+   * ```js
+   * {
+   *   keyFormatExpressions: ['(\\w{32}(.min)?']
+   * }
+   * ```
+   */
+  keyFormatExpressions?: string[]
+
+  /**
    * The public path in AEM where your ClientLibs are stored.
    *
    * @example
