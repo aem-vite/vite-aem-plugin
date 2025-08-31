@@ -6,6 +6,8 @@ import viteReact from '@vitejs/plugin-react'
 import type { HttpProxy, ResolvedConfig } from 'vite'
 import type { PluginOptions } from './types'
 
+const defaultKeyFormatExpressions = ['lc-\\w{32}-lc(.min)?)', '((min.)?ACSHASH\\w{32})', '(\\w{32}(.min)?']
+
 const prefix = '[vite-aem-plugin]'
 
 let bundleEntries: string[]
@@ -76,6 +78,22 @@ export function setResolvedConfig(config: ResolvedConfig) {
 }
 
 /**
+ * Combine the default and custom key format expressions.
+ *
+ * @param options AEM Vite options
+ * @returns a list of key format expressions
+ */
+export function getKeyFormatExpressions(options: PluginOptions) {
+  const customKeyFormatExpressions = options.keyFormatExpressions ?? []
+
+  if (!Array.isArray(customKeyFormatExpressions)) {
+    throw new Error('options.keyFormatExpressions must be an array of strings.')
+  }
+
+  return Array.from(new Set([...customKeyFormatExpressions, ...defaultKeyFormatExpressions]))
+}
+
+/**
  * Handles the proxy interactions between Vite and AEM to generate custom responses.
  * Inspired by https://github.com/adobe/aem-site-theme-builder.
  *
@@ -85,10 +103,12 @@ export function setResolvedConfig(config: ResolvedConfig) {
  * @returns an HTTP proxy callback
  */
 export function configureAemProxy(aemUrl: string, options: PluginOptions) {
+  const keyFormatExpressions = getKeyFormatExpressions(options)
+
   const clientlibsExpression = new RegExp(
     `<(?:script|link).*(?:src|href)="${
       options.clientlibsExpression ?? options.publicPath
-    }.(?:(lc-\\w{32}-lc(.min)?)|((min.)?ACSHASH\\w{32})|(\\w{32}(.min)?))?.?(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
+    }.(?:(${keyFormatExpressions.join('|')}))?.?(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
     'g',
   )
 
