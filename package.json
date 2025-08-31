@@ -6,7 +6,7 @@
   "name": "@aem-vite/vite-aem-plugin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aem-vite/vite-aem-plugin"
+    "url": "git+https://github.com/aem-vite/vite-aem-plugin.git"
   },
   "bugs": {
     "url": "https://github.com/aem-vite/vite-aem-plugin/issues"
