@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.6...v5.1.0) (2025-08-31)
+
+
+### Features
+
+* add support for custom key format expressions [#14](https://github.com/aem-vite/vite-aem-plugin/issues/14) ([bbd52c3](https://github.com/aem-vite/vite-aem-plugin/commit/bbd52c36f3e47984540189f9929dcb1557e97ad7))
+
 ## [5.0.6](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.5...v5.0.6) (2025-08-30)
 
 ## [5.0.5](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.4...v5.0.5) (2024-06-22)
