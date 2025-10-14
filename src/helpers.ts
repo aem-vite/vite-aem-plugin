@@ -24,7 +24,7 @@ export function isObject(value: unknown): value is Record<string, unknown> {
  *
  * @returns Vite DevServer tags
  */
-function getViteScripts() {
+function getViteBaseScripts() {
   const entries: string[] = []
 
   entries.push('<script type="module" src="/@vite/client"></script>')
@@ -38,7 +38,36 @@ function getViteScripts() {
     `)
   }
 
+  return entries.join('\n')
+}
+
+/**
+ * Retrieves the Vite DevServer `link`/`script` tags.
+ *
+ * @returns Vite Sources tags
+ */
+function getViteScripts() {
+  const entries: string[] = []
+
+  entries.push(getViteBaseScripts())
+
   for (const source of bundleEntries) {
+    if (/\.(js|ts)x?/.test(source)) {
+      entries.push(`<script type="module" src="/${source}"></script>`)
+    } else if (/\.(css|less|sass|scss|postcss)/.test(source)) {
+      entries.push(`<link rel="stylesheet" href="/${source}"/>`)
+    }
+  }
+
+  return entries.join('\n')
+}
+
+function getViteScript(key: string) {
+  const entries: string[] = []
+
+  const source = bundleEntries.find((entry) => entry === key)
+
+  if (source) {
     if (/\.(js|ts)x?/.test(source)) {
       entries.push(`<script type="module" src="/${source}"></script>`)
     } else if (/\.(css|less|sass|scss|postcss)/.test(source)) {
@@ -105,12 +134,22 @@ export function getKeyFormatExpressions(options: PluginOptions) {
 export function configureAemProxy(aemUrl: string, options: PluginOptions) {
   const keyFormatExpressions = getKeyFormatExpressions(options)
 
-  const clientlibsExpression = new RegExp(
-    `<(?:script|link).*(?:src|href)="${
-      options.clientlibsExpression ?? options.publicPath
-    }.(?:(${keyFormatExpressions.join('|')}))?.?(?:css|js)"(([\\w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
-    'g',
-  )
+  let clientlibsExpression: RegExp | Record<string, RegExp>
+
+  if (isObject(options.clientlibsExpression)) {
+    clientlibsExpression = {}
+    for (const [key, value] of Object.entries(options.clientlibsExpression)) {
+      clientlibsExpression[key] = new RegExp(
+        `<(?:script|link).*(?:src|href)="${value}"(([w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
+        'g',
+      )
+    }
+  } else {
+    clientlibsExpression = clientlibsExpression = new RegExp(
+      `<(?:script|link).*(?:src|href)="${options.clientlibsExpression ?? options.publicPath}.(?:(${keyFormatExpressions.join('|')}))?.?(?:css|js)"(([w+])=['"]([^'"]*)['"][^>]*>|[^>]*(?:></script>|>))`,
+      'g',
+    )
+  }
 
   debug('clientlibs (custom) expression', options.clientlibsExpression)
   debug('clientlibs expression', clientlibsExpression)
@@ -147,19 +186,47 @@ export function configureAemProxy(aemUrl: string, options: PluginOptions) {
           debug('parsing request for:', requestUrl)
           debug('content length', html.length)
 
-          const matches = html.match(clientlibsExpression)
-
-          debug('total clientlib matches:', matches)
-
           let replacedHtml = html
+          let matches: RegExpMatchArray | null = null
 
-          if (matches) {
-            debug('stripping matched clientlibs:', matches)
+          if (isObject(clientlibsExpression)) {
+            let matchesCount = 0
 
-            matches.forEach((match, index) => {
-              // Replace the last matched ClientLib with the Vite DevServer script tags
-              replacedHtml = replacedHtml.replace(match, index === matches.length - 1 ? getViteScripts() : '')
-            })
+            for (const [key, value] of Object.entries(clientlibsExpression)) {
+              matches = html.match(value)
+
+              if (matches) {
+                debug('stripping matched clientlibs expression:', value, matches)
+
+                matches.forEach((match) => {
+                  if (matchesCount === 0) {
+                    replacedHtml = replacedHtml.replace(match, `${getViteBaseScripts()} ${getViteScript(key)}`)
+                  } else {
+                    replacedHtml = replacedHtml.replace(match, getViteScript(key))
+                  }
+                })
+
+                matchesCount += matches.length
+              }
+            }
+
+            debug('total clientlib matches:', matchesCount)
+          } else {
+            matches = html.match(clientlibsExpression)
+
+            if (matches) {
+              debug('stripping matched clientlibs:', matches)
+
+              matches.forEach((match, index) => {
+                // Replace the last matched ClientLib with the Vite DevServer script tags
+                replacedHtml = replacedHtml.replace(
+                  match,
+                  index === (matches as RegExpMatchArray).length - 1 ? getViteScripts() : '',
+                )
+              })
+            }
+
+            debug('total clientlib matches:', matches?.length)
           }
 
           const isHtmlModified = replacedHtml.length !== html.length
