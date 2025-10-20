@@ -1,3 +1,11 @@
+# [5.2.0](https://github.com/aem-vite/vite-aem-plugin/compare/v5.1.0...v5.2.0) (2025-08-31)
+
+
+### Features
+
+* add option to specifying which paths will be replaced when injecting vite files
+
+
 # [5.1.0](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.6...v5.1.0) (2025-08-31)
 
 

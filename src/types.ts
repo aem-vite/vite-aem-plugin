@@ -26,11 +26,18 @@ export interface PluginOptions {
 
   /**
    * The expression to use when matching ClientLibs on a page.
+   * Can be a string for replacing all matches with vite scripts,
+   * or an object mapping source paths to specific replacement values.
    *
    * @example
-   * /etc.clienlibs/<project>/clientlibs/(<clientlib_one>|<clientlib_two>)
+   * // String usage
+   * "/etc.clientlibs/<project>/clientlibs/(<clientlib_one>|<clientlib_two>)"
+   * // Object usage
+   * {
+   *   "src/index.ts": "/etc.clientlibs/<project>/clientlibs/<clientlib_one>"
+   * }
    */
-  clientlibsExpression?: string
+  clientlibsExpression?: string | Record<string, string>
 
   /**
    * A list of AEM paths to watch and replace ClientLib paths within.

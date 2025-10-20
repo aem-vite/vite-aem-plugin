@@ -146,7 +146,7 @@ export function viteForAem(options: PluginOptions): PluginOption[] {
         publicPath: options.publicPath,
         minify,
         resourcesPath,
-      }),
+      }) as PluginOption,
     )
   }
 
