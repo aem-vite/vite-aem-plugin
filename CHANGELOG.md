@@ -1,3 +1,11 @@
+## [5.1.1](https://github.com/aem-vite/vite-aem-plugin/compare/v5.1.0...v5.1.1) (2026-02-22)
+
+
+### Bug Fixes
+
+* move types condition before default in package.json exports ([7033835](https://github.com/aem-vite/vite-aem-plugin/commit/703383571ac1b8e8176b5fc0b02eb61ef35b5969))
+* update Node.js version to satisfy semantic-release ^22.14.0 requirement ([7b662bd](https://github.com/aem-vite/vite-aem-plugin/commit/7b662bd5df6341a33047f0f88aa25d203eeaa961))
+
 # [5.1.0](https://github.com/aem-vite/vite-aem-plugin/compare/v5.0.6...v5.1.0) (2025-08-31)
 
 
